@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Aroma Café</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+    <!-- NAV SIMPLE -->
+    <header class="admin-header">
+        <h1>☕ Panel Admin</h1>
+
+        <div class="admin-actions">
+            <a href="/index.html" class="btn">Ir al catálogo</a>
+            <button onclick="logout()" class="btn btn-danger">
+                Cerrar sesión
+            </button>
+        </div>
+    </header>
+
+    <!-- INFO DEL ADMIN -->
+    <section class="admin-card">
+        <div id="adminInfo"></div>
+    </section>
+
+    <!-- DASHBOARD FUTURO (opcional) -->
+    <section class="admin-dashboard">
+        <h2>Tu función</h2>
+        <div class="card-box">
+            
+            <h3>📦 Productos</h3>
+            <p>Gestiona el catálogo de café</p>
+        </div>
+
+     
+    </section>
+
+    <script>
+        const user = JSON.parse(localStorage.getItem("loggedUser"));
+
+        if (!user) {
+            window.location.href = "/pages/login.html";
+        }
+
+        if (user.role !== "admin") {
+            window.location.href = "/index.html";
+        }
+
+        document.getElementById("adminInfo").innerHTML = `
+            <h2>Bienvenido, ${user.name} ☕</h2>
+            <p><strong>Rol:</strong> ${user.role}</p>
+            <p>Acceso autorizado al panel de administración</p>
+        `;
+
+        function logout() {
+            localStorage.removeItem("loggedUser");
+            window.location.href = "/pages/login.html";
+        }
+    </script>
+
+    <script src="/js/components.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<nav class="navbar">
+
+    <h2>Aroma Café </h2>
+
+    <ul>
+
+        <li>
+            <a href="/index.html">
+                Inicio
+            </a>
+        </li>
+
+        <li>
+            <a href="/pages/login.html">
+                Login
+            </a>
+        </li>
+
+        <li>
+            <a href="/pages/register.html">
+                Registro
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+    <h1>Iniciar Sesión ☕</h1>
+
+    <form id="loginForm">
+
+        <input type="email" id="email" placeholder="Correo" required>
+
+        <input type="password" id="password" placeholder="Contraseña" required>
+
+        <button type="submit">
+            Ingresar
+        </button>
+
+    </form>
+
+    
+
+    <script>
+
+const API_URL = "https://aromacafe-backend.onrender.com/api/users";
+
+const loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+
+    const password = document.getElementById("password").value;
+
+    try {
+
+       const res = await fetch(`${API_URL}/login`, {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                email,
+                password
+            })
+        });
+
+        const user = await res.json();
+
+        if (user.message) {
+
+            alert(user.message);
+            return;
+        }
+
+        localStorage.setItem("loggedUser", JSON.stringify(user));
+
+        alert("Bienvenido " + user.name);
+
+        if (user.role === "admin") {
+
+            window.location.href = "admin.html";
+
+        } else {
+
+            window.location.href = "/index.html";
+        }
+
+    } catch (error) {
+
+        console.log(error);
+
+        alert("Error conectando con el servidor");
+    }
+
+});
+
+</script>
+    
+<script src="/js/components.js"></script>
+</body>
+</html>

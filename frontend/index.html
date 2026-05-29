@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Aroma Café</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+   <nav class="navbar">
+
+    <h2>Aroma Café </h2>
+
+    <ul>
+    <li>
+        <a href="/index.html">Inicio</a>
+    </li>
+
+    <!-- 🔥 OPCIONES SI NO LOGUEADO -->
+    <li id="login-link">
+        <a href="/pages/login.html">Login</a>
+    </li>
+
+    <li id="register-link">
+        <a href="/pages/register.html">Registro</a>
+    </li>
+
+    <!-- 🔥 LOGOUT (OCULTO POR DEFECTO) -->
+    <li id="logout-link" style="display:none;">
+        <a href="#" onclick="logout()">Cerrar sesión</a>
+    </li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+    <div class="hero-overlay">
+
+        <div class="hero-content">
+
+            <h1 id="Aromatext">Aroma Café</h1>
+
+            <p>
+                El mejor café artesanal de Costa Rica.
+                Hecho con amor, servido con pasión.
+            </p>
+
+           
+
+        </div>
+
+    </div>
+</section>
+<section class="featured">
+
+    <h2>⭐ Nuestros más vendidos</h2>
+
+    <div class="featured-container">
+
+        <div class="featured-card">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+            <h3>Cappuccino</h3>
+            <p>Cremoso y artesanal</p>
+        </div>
+
+        <div class="featured-card">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+            <h3>Latte</h3>
+            <p>Suave y equilibrado</p>
+        </div>
+
+        <div class="featured-card">
+            <img src="https://images.unsplash.com/photo-1521302080334-4bebac2763a6">
+        
+            <h3>Mocha</h3>
+            <p>Café con chocolate premium</p>
+        </div>
+
+    </div>
+
+</section>
+  
+
+    <form id="productForm">
+  <h1>Agregar productos</h1>
+        <input type="text" id="name" placeholder="Nombre del producto" required>
+
+        <input type="number" id="price" placeholder="Precio" required>
+
+        <input type="text" id="description" placeholder="Descripción">
+
+        <input type="text" id="image" placeholder="URL imagen">
+
+        <input type="number" id="stock" placeholder="Stock">
+
+        <button type="submit">
+            Agregar producto
+        </button>
+
+    </form>
+
+
+    <div id="products"></div>
+
+   <footer class="footer">
+
+    <p>
+        © 2026 Aroma Café 
+    </p>
+
+</footer>
+
+    <script src="/js/components.js"></script>
+    <script src="/js/app.js"></script>
+
+</body>
+</html>

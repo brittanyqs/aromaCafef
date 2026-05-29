@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Registro</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<nav class="navbar">
+
+    <h2>Aroma Café </h2>
+
+    <ul>
+
+        <li>
+            <a href="/index.html">
+                Inicio
+            </a>
+        </li>
+
+        <li>
+            <a href="/pages/login.html">
+                Login
+            </a>
+        </li>
+
+        <li>
+            <a href="/pages/register.html">
+                Registro
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+    <h1>Crear Cuenta ☕</h1>
+
+    <form id="registerForm">
+
+        <input type="text" id="username" placeholder="Usuario" required>
+
+        <input type="email" id="email" placeholder="Correo" required>
+
+        <input type="password" id="password" placeholder="Contraseña" required>
+
+        <button type="submit">
+            Registrarse
+        </button>
+
+    </form>
+
+   <script>
+
+const API_URL = "https://aromacafe-backend.onrender.com/api/users";
+
+const registerForm = document.getElementById("registerForm");
+
+registerForm.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    const user = {
+
+        name: document.getElementById("username").value,
+
+        email: document.getElementById("email").value,
+
+        password: document.getElementById("password").value
+    };
+
+    try {
+
+       const res = await fetch(`${API_URL}/register`, {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(user)
+        });
+
+        const data = await res.json();
+
+        if (data.message) {
+
+            alert(data.message);
+            return;
+        }
+
+        alert("Usuario registrado correctamente");
+
+        window.location.href = "login.html";
+
+    } catch (error) {
+
+        console.log(error);
+
+        alert("Error conectando con el servidor");
+    }
+
+});
+
+</script>
+<script src="/js/components.js"></script>
+</body>
+</html>
