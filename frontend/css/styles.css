@@ -141,6 +141,10 @@ button:hover{
     0 10px 25px rgba(0,0,0,0.1);
 
     transition: 0.3s;
+
+    display: flex;
+
+    flex-direction: column;
 }
 .card:hover{
 
@@ -156,7 +160,14 @@ button:hover{
 }
 
 .card-content{
+
     padding: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
 }
 
 .card h2{
@@ -167,7 +178,14 @@ button:hover{
 .card p{
     margin-bottom: 10px;
 }
+.card-content p:first-of-type{
 
+    min-height: 55px;
+}
+.card-content a{
+
+    margin-top: auto;
+}
 .footer {
     margin-top: 50px;
     background: #6f4e37;
