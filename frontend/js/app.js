@@ -72,13 +72,17 @@ async function getProducts() {
                 <p>Stock: ${product.stock}</p>
 
                 ${role === "admin" ? `
-                    <button onclick="editProduct('${product._id}')">
-                        Editar
-                    </button>
+                   <div class="admin-buttons">
 
-                    <button onclick="deleteProduct('${product._id}')">
-                        Eliminar
-                    </button>
+    <button onclick="editProduct('${product._id}')">
+        Editar
+    </button>
+
+    <button onclick="deleteProduct('${product._id}')">
+        Eliminar
+    </button>
+
+</div>
                 ` : ""}
 
                 <a 
