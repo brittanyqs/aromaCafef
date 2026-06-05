@@ -180,9 +180,21 @@ button:hover{
 
     min-height: 55px;
 }
+
 .card-content a{
 
+    display: flex;
+
+    justify-content: center;
+
+    width: 100%;
     margin-top: auto;
+}
+.card-content button{
+
+    width: 80%;
+
+    min-width: 160px;
 }
 .footer {
     margin-top: 50px;
