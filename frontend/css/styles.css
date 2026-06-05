@@ -86,11 +86,11 @@ input{
 }
 button{
 
-    padding: 12px;
+    padding: 10px 16px;
 
     border: none;
 
-    border-radius: 12px;
+    border-radius: 10px;
 
     background: linear-gradient(
         135deg,
@@ -102,13 +102,11 @@ button{
 
     cursor: pointer;
 
-    font-size: 15px;
+    font-size: 14px;
 
-    font-weight: 500;
+    width: auto;
 
-    transition: 0.3s;
-
-    width: 100%;
+    min-width: 120px;
 }
 button:hover{
 
@@ -192,6 +190,16 @@ button:hover{
     color: white;
     padding: 40px 20px 20px;
     border-radius: 15px;
+}
+.card-buttons{
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-top: 10px;
 }
 
 .footer-container {
