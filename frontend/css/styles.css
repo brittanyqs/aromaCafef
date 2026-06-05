@@ -1,3 +1,21 @@
+.admin-buttons{
+
+    display: flex;
+
+    gap: 10px;
+
+    justify-content: center;
+
+    margin-top: 10px;
+
+    margin-bottom: 10px;
+}
+.admin-buttons button{
+
+    width: 120px;
+
+    padding: 8px 12px;
+}
 .navbar{
     background: #6f4e37;
     color: white;
