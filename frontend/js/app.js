@@ -12,6 +12,7 @@ const role = loggedUser?.role;
 const form = document.getElementById("productForm");
 const productsDiv = document.getElementById("products");
 const searchInput = document.getElementById("searchInput");
+const API_URL = "https://aromacafe-backend.onrender.com/api/products";
 
 // ==============================
 // PROTEGER CRUD (solo admin)
@@ -35,10 +36,7 @@ if (!loggedUser) {
     getProducts();
 }
 
-// ==============================
-// URL BACKEND
-// ==============================
-const API_URL = "https://aromacafe-backend.onrender.com/api/products";
+
 
 
 // ==============================
