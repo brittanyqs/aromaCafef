@@ -182,7 +182,7 @@ button:hover{
 }
 
 .card-content a{
-
+text-decoration: none;
     display: flex;
 
     justify-content: center;
