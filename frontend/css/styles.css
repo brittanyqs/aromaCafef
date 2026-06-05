@@ -180,9 +180,12 @@ button:hover{
 
     min-height: 55px;
 }
-
+a{
+    text-decoration: none;
+}
 .card-content a{
 text-decoration: none;
+    color: inherit;
     display: flex;
 
     justify-content: center;
