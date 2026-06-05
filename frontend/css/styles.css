@@ -9,11 +9,15 @@
     margin-top: 10px;
 
     margin-bottom: 10px;
+
+    padding: 0 15px;
 }
 .admin-buttons button{
 
-    width: 120px;
 
+    flex: 1;
+
+    max-width: 130px;
     padding: 8px 12px;
 }
 .navbar{
